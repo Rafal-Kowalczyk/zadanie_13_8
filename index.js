@@ -9,15 +9,14 @@ server.on('request', function (request, response) {
     	fs.readFile('./index.html', 'utf-8', function(err, html) {
 	        response.write('<h1>index.html</h1>');
 	        response.write(html);
-			 response.end();
-		});	 
+		response.end();
+	});	 
     } else {
         fs.readFile("./statusCode404.jpg", "binary", function(error, file) {
 	        response.writeHead(200, {"Content-Type": "image/jpg"});
 	        response.write(file, "binary");
 	        response.end();
-	    });
-	}
+	});
+    }
  });
-
 server.listen(8084);
