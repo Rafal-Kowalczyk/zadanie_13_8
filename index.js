@@ -5,7 +5,7 @@ var server = http.createServer();
 
 server.on('request', function (request, response) {
     response.setHeader("Content-Type", "text/html; charset=utf-8");
-    if (request.method === 'GET' && request.url === '/index') {
+    if (request.method === 'GET' && request.url === '/') {
     	fs.readFile('./index.html', 'utf-8', function(err, html) {
 	        response.write('<h1>index.html</h1>');
 	        response.write(html);
